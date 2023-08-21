@@ -165,6 +165,7 @@ header img {
 
 #canvasContainer .row div {
   flex: 1;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 }
 
 input[type="range"] {
@@ -308,7 +309,6 @@ input[type="range"]:focus::-ms-fill-upper {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
-  filter: brightness(1);
 }
 
 /* #tools #shadingMode {

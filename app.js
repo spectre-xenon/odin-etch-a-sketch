@@ -8,12 +8,12 @@ let currentColor = "white";
 let lastSelectedColor = "";
 let drawing = false;
 
-canvas.addEventListener("mousedown", () => {
+window.onmousedown = () => {
   drawing = true;
-});
-canvas.addEventListener("mouseup", () => {
+};
+window.onmouseup = () => {
   drawing = false;
-});
+};
 
 document.getElementById("orange").addEventListener("click", () => {
   if (isErasing) return null;
@@ -51,7 +51,7 @@ document.getElementById("eyeDropper").addEventListener("change", () => {
 let isErasing = false;
 const eraser = document.getElementById("eraser");
 eraser.addEventListener("click", () => {
-  if (!isErasing) {
+  if (!isErasing && isRainbowMode === false) {
     isErasing = true;
     eraser.classList.add("inputOn");
     currentColor = "white";
@@ -105,7 +105,7 @@ function getRandomColor() {
 }
 
 rainbowMode.addEventListener("click", () => {
-  if (!isRainbowMode) {
+  if (!isRainbowMode && isErasing === false) {
     isRainbowMode = true;
     rainbowMode.setAttribute("id", "rainbowModeOn");
   } else {
