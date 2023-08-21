@@ -1,0 +1,334 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  color: #ffffff;
+  text-align: center;
+  font-family: Finger Paint;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  overflow-x: hidden;
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+header img {
+  width: 70%;
+  object-fit: contain;
+}
+
+#header {
+  background: black;
+  font-size: 5rem;
+  width: 100vw;
+  height: 14vh;
+}
+
+#mainContainer {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  background-image: url("./resources/lines.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% 120%;
+  display: flex;
+  align-items: flex-end;
+
+  padding-top: 4%;
+  padding-bottom: 2%;
+  padding-left: 20%;
+  padding-right: 18%;
+}
+
+#colors {
+  background-color: black;
+  height: 86%;
+  flex: 1;
+  border: 6px solid white;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#mainContainer #colors {
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.64));
+  transform: translateX(5%);
+  z-index: 1000;
+}
+
+.colorSelectors {
+  height: 13%;
+  width: 54%;
+  border: 2px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+}
+
+.colorSelectors:hover {
+  scale: 105%;
+}
+
+#orange {
+  background-color: #ffac4b;
+}
+
+#green {
+  background-color: #47ff6f;
+}
+
+#lightBlue {
+  background-color: #2dc0ff;
+}
+
+#purple {
+  background-color: #a12aff;
+}
+
+#red {
+  background-color: #ff5c5c;
+}
+
+#eyeDropper {
+  border-width: 3px;
+  border-radius: 18px;
+  background: linear-gradient(
+    225deg,
+    #ffac4b 0%,
+    #47ff6f 26.87%,
+    #2dc0ff 52.4%,
+    #8a7eff 75.83%,
+    #ff5c5c 100%
+  );
+}
+
+#eyeDropper::-webkit-color-swatch {
+  border-radius: 15px;
+  border: none;
+  align-self: center;
+}
+#eyeDropper::-moz-color-swatch {
+  border-radius: 15px;
+  border: none;
+  align-self: center;
+}
+
+#drawingContainer {
+  flex: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#sizes {
+  display: flex;
+  justify-content: space-around;
+}
+
+#sizes img {
+  width: 15%;
+  object-fit: contain;
+}
+
+#canvasContainer {
+  height: 85%;
+  width: 100%;
+  margin-top: 1%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#canvasContainer .row {
+  flex: 1;
+  display: flex;
+}
+
+#canvasContainer .row div {
+  flex: 1;
+}
+
+input[type="range"] {
+  width: 80%;
+  height: 5%;
+  margin: 4.2px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  align-self: center;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ffffff;
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 15.6px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -4.2px;
+  width: 50px;
+  height: 24px;
+  background: #9831ff;
+  border: 0px solid rgba(9, 30, 0, 0);
+  border: 0;
+  border-radius: 27px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+input[type="range"]::-moz-range-track {
+  background: #ffffff;
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 15.6px;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 50px;
+  height: 24px;
+  background: #9831ff;
+  border: 0px solid rgba(9, 30, 0, 0);
+  border: 0;
+  border-radius: 27px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4.2px 0;
+  color: transparent;
+  width: 100%;
+  height: 15.6px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #ffffff;
+  border: 0;
+  border-radius: 50px;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #ffffff;
+  border: 0;
+  border-radius: 50px;
+}
+input[type="range"]::-ms-thumb {
+  width: 50px;
+  height: 24px;
+  background: #9831ff;
+  border: 0px solid rgba(9, 30, 0, 0);
+  border: 0;
+  border-radius: 27px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #ffffff;
+}
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+  how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type="range"] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+
+#tools {
+  background-color: black;
+  height: 50%;
+  align-self: center;
+  flex: 1.2;
+
+  /* remove */
+  border: 2px solid white;
+  border-radius: 18px;
+  margin-left: 2%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#tools input {
+  background: black;
+  border: 2px solid white;
+  border-radius: 6px;
+  width: 88%;
+  height: 12%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+}
+
+#tools input:hover {
+  scale: 102%;
+}
+
+#tools #rainbowMode {
+  background: linear-gradient(
+    270deg,
+    #ff5c5c 0%,
+    #a12aff 28.65%,
+    #2dc0ff 50%,
+    #47ff6f 73.44%,
+    #ffac4b 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+  filter: brightness(1);
+}
+
+/* #tools #shadingMode {
+  background: linear-gradient(270deg, #525252 0%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+/* #tools #shadingModeOn {
+  background: white;
+  color: black;
+} */
+
+#tools #rainbowModeOn {
+  background: white;
+  color: black;
+}
+
+#tools .inputOn {
+  background-color: white;
+  color: black;
+}

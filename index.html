@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <img src="./resources/Etch-a-sketch.png" alt="Etch a sketch logo" />
+    </header>
+
+    <div id="mainContainer">
+      <div id="colors">
+        <div id="orange" class="colorSelectors"></div>
+        <div id="green" class="colorSelectors"></div>
+        <div id="lightBlue" class="colorSelectors"></div>
+        <div id="purple" class="colorSelectors"></div>
+        <div id="red" class="colorSelectors"></div>
+        <input type="color" id="eyeDropper" class="colorSelectors" />
+      </div>
+      <div id="drawingContainer">
+        <div id="sizes">
+          <img id="Num32" src="./resources/64.png" alt="32 by 32" />
+          <img src="./resources/32.png" alt="64 by 64" />
+          <img id="Num120" src="./resources/120.png" alt="120 by 120" />
+        </div>
+        <input id="slider" type="range" step="50" />
+        <div id="canvasContainer"></div>
+      </div>
+      <div id="tools">
+        <input type="button" id="eraser" value="Toggle Eraser" />
+        <input type="button" id="clearCanvas" value="Clear Canvas" />
+        <input type="button" id="toggleGridButt" value="Toggle Grid" />
+        <input type="button" id="rainbowMode" value="Rainbow Mode" />
+        <!-- <input type="button" id="shadingMode" value="Shading Mode" /> -->
+      </div>
+    </div>
+  </body>
+  <script src="./app.js" ></script>
+</html>
