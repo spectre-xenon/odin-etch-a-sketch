@@ -74,13 +74,9 @@ const singleCell = document.getElementsByClassName("singleCell");
 
 function toggleGrid() {
   if (gridToggled) {
-    for (let i = 0; i < singleCell.length; i++) {
-      singleCell[i].style.border = "1px solid black";
-    }
+    canvas.classList.add("gridLine");
   } else {
-    for (let i = 0; i < singleCell.length; i++) {
-      singleCell[i].style.border = "none";
-    }
+    canvas.classList.remove("gridLine");
   }
 }
 
@@ -138,7 +134,6 @@ function generateGrid(size) {
     for (let i = 0; i <= size; i++) {
       const div = document.createElement("div");
       div.classList.add("singleCell");
-      div.style.filter = "brightness(1)";
       div.addEventListener("mouseover", () => {
         toggleGrid();
         if (drawing) {
